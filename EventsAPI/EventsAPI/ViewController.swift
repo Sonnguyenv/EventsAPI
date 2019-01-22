@@ -1,51 +1,6 @@
 
 import UIKit
 
-struct Noname: Decodable {
-    let status: Int
-    let response: Response?
-}
-
-struct Response: Decodable {
-    let events: Events?
-}
-
-struct Events: Decodable {
-    let id: Int?
-    let status: Int?
-    let link: String?
-    let photo: String?
-    let name: String?
-    let description_raw: String?
-    let description_html: String?
-    let schedule_start_date: String
-    let schedule_start_time: String
-    let schedule_end_date: String
-    let schedule_end_time: String
-    let going_count: Int
-    let went_count: Int
-    let venue: Venue?
-    let category: Category?
-}
-
-struct Venue: Decodable {
-    let id: Int
-    let name: String
-    let type: Int
-    let description: String
-    let contact_phone: String
-    let contact_address: String
-    let geo_area: String
-    let geo_long: String
-    let geo_lat: String
-}
-
-struct Category: Decodable {
-    let id: Int
-    let name: String
-    let slug: String
-}
-
 class ViewController: UIViewController {
     @IBOutlet weak var eventLable: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
@@ -68,7 +23,7 @@ class ViewController: UIViewController {
         guard let url = URL(string: "http://172.16.18.91/18175d1_mobile_100_fresher/public/api/v0/getDetailEvent?event_id=1") else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
-            do {print(data)
+            do {
                 let noname = try JSONDecoder().decode(Noname.self, from: data)
                 let dataEvents = noname.response?.events
                 let dataVanue = noname.response?.events?.venue
@@ -92,7 +47,6 @@ class ViewController: UIViewController {
                             self.nameVanueLable.text = dataVanue?.name
                             self.contactAddressVanueLable.text = dataVanue?.contact_address
                             self.geoAreaVanueLable.text = dataVanue?.geo_area
-                            
                         }
                     }
                 }.resume()
@@ -101,19 +55,3 @@ class ViewController: UIViewController {
     }
 }
 
-extension String {
-    var htmlToAttributedString: NSAttributedString? {
-        guard let data = data(using: .utf8) else { return NSAttributedString() }
-        do {
-            return try NSAttributedString(data: data,
-                                          options: [.documentType: NSAttributedString.DocumentType.html,
-                                                    .characterEncoding: String.Encoding.utf8.rawValue],
-                                          documentAttributes: nil)
-        } catch {
-            return NSAttributedString()
-        }
-    }
-    var htmlToString: String {
-        return htmlToAttributedString?.string ?? ""
-    }
-}

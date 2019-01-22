@@ -14,6 +14,8 @@
 		3081392021EF217F00F0CA83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3081391E21EF217F00F0CA83 /* LaunchScreen.storyboard */; };
 		3081392B21EF217F00F0CA83 /* EventsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3081392A21EF217F00F0CA83 /* EventsAPITests.swift */; };
 		3081393621EF217F00F0CA83 /* EventsAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3081393521EF217F00F0CA83 /* EventsAPIUITests.swift */; };
+		30C0BD3621F5A4C800FCAC72 /* MainEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0BD3521F5A4C800FCAC72 /* MainEvents.swift */; };
+		30C0BD3821F5A58700FCAC72 /* HTMLToAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0BD3721F5A58700FCAC72 /* HTMLToAttributedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3081393121EF217F00F0CA83 /* EventsAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3081393521EF217F00F0CA83 /* EventsAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAPIUITests.swift; sourceTree = "<group>"; };
 		3081393721EF218000F0CA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30C0BD3521F5A4C800FCAC72 /* MainEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEvents.swift; sourceTree = "<group>"; };
+		30C0BD3721F5A58700FCAC72 /* HTMLToAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLToAttributedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				3081391521EF217E00F0CA83 /* AppDelegate.swift */,
+				30C0BD3521F5A4C800FCAC72 /* MainEvents.swift */,
 				3081391721EF217E00F0CA83 /* ViewController.swift */,
+				30C0BD3721F5A58700FCAC72 /* HTMLToAttributedString.swift */,
 				3081391921EF217E00F0CA83 /* Main.storyboard */,
 				3081391C21EF217F00F0CA83 /* Assets.xcassets */,
 				3081391E21EF217F00F0CA83 /* LaunchScreen.storyboard */,
@@ -257,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3081391821EF217E00F0CA83 /* ViewController.swift in Sources */,
+				30C0BD3621F5A4C800FCAC72 /* MainEvents.swift in Sources */,
+				30C0BD3821F5A58700FCAC72 /* HTMLToAttributedString.swift in Sources */,
 				3081391621EF217E00F0CA83 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
